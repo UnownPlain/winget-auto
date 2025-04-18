@@ -9,5 +9,12 @@ export async function getLatestRelease(owner: string, repo: string) {
     repo,
   });
 
-  return release.data.tag_name;
+  return release.data.tag_name.replace(/^v/, "");
+}
+
+export async function getTagHash(owner: string, repo: string) {
+  return await octokit.rest.repos.listTags({
+    owner,
+    repo,
+  });
 }
