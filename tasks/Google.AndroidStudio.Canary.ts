@@ -15,5 +15,11 @@ export default async function () {
 		`https://redirector.gvt1.com/edgedl/android/studio/install/${version}/android-studio-${version}-windows.exe`,
 	];
 
-	await updatePackage('Google.AndroidStudio.Canary', version, urls);
+	await updatePackage(
+		'Google.AndroidStudio.Canary',
+		version,
+		urls,
+		'--release-notes-url',
+		'https://androidstudio.googleblog.com/',
+	);
 }

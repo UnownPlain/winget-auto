@@ -1,5 +1,5 @@
 import z from 'zod';
-
+import { red } from 'ansis';
 // deno-lint-ignore no-explicit-any
 export function validateString(str: any) {
 	return z.string().parse(str);
@@ -7,7 +7,7 @@ export function validateString(str: any) {
 
 export function validateMatch(match: RegExpMatchArray | null) {
 	if (!match) {
-		throw new Error('Unable to parse version');
+		throw new Error(red`Unable to parse version`);
 	}
 	return match;
 }

@@ -1,3 +1,5 @@
+import { bgRed, blue, green, redBright } from 'ansis';
+
 async function runAllTasks() {
 	const taskEntries = [...Deno.readDirSync('./tasks')];
 
@@ -5,21 +7,24 @@ async function runAllTasks() {
 
 	for (const entry of taskEntries) {
 		if (entry.isFile && entry.name.endsWith('.ts')) {
-			console.log(`Running task: ${entry.name}`);
+			console.log(blue`Running task: ${entry.name}\n`);
 
 			try {
 				const taskModule = await import(`../tasks/${entry.name}`);
 				await taskModule.default();
 
-				console.log(`✅ Successfully completed task: ${entry.name}`);
+				console.log(green`✅ Successfully completed task: ${entry.name}`);
 			} catch (taskError) {
 				const errorMessage = taskError instanceof Error
 					? taskError.message
 					: String(taskError);
-				console.error(`❌ Error in task ${entry.name}:\n`, errorMessage);
+				console.error(
+					bgRed`❌ Error in task ${entry.name}:\n`,
+					redBright`${errorMessage}`,
+				);
 			}
 
-			console.log('-'.repeat(40));
+			console.log('-'.repeat(55));
 		}
 	}
 

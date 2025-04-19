@@ -3,6 +3,8 @@
   "specifiers": {
     "jsr:@std/path@*": "1.0.8",
     "jsr:@std/path@^1.0.8": "1.0.8",
+    "npm:ansis@*": "3.17.0",
+    "npm:ansis@^3.17.0": "3.17.0",
     "npm:octokit@*": "4.1.3_@octokit+core@6.1.5",
     "npm:octokit@^4.1.3": "4.1.3_@octokit+core@6.1.5",
     "npm:zod@^3.24.3": "3.24.3"
@@ -208,6 +210,9 @@
     "@types/aws-lambda@8.10.149": {
       "integrity": "sha512-NXSZIhfJjnXqJgtS7IwutqIF/SOy1Wz5Px4gUY1RWITp3AYTyuJS4xaXr/bIJY1v15XMzrJ5soGnPM+7uigZjA=="
     },
+    "ansis@3.17.0": {
+      "integrity": "sha512-0qWUglt9JEqLFr3w1I1pbrChn1grhaiAR2ocX1PP/flRmxgtwTzPFFFnfIlD6aMOLQZgSuCRlidD70lvx8yhzg=="
+    },
     "before-after-hook@3.0.2": {
       "integrity": "sha512-Nik3Sc0ncrMK4UUdXQmAnRtzmNQTAAXmXIopizwZ1W1t8QmfJj+zL4OA2I7XPTPW5z5TDqv4hRo/JzouDJnX3A=="
     },
@@ -248,6 +253,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/path@^1.0.8",
+      "npm:ansis@^3.17.0",
       "npm:octokit@^4.1.3",
       "npm:zod@^3.24.3"
     ]
